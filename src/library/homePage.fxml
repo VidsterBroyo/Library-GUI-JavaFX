@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!--<?import org.controlsfx.control.Rating?>-->
+<!--<?import org.controlsfx.control.Rating?>-->
+
+<StackPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@libCss.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.HomePageController">
+   <children>
+      <AnchorPane id="title" fx:id="homePane" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER" layoutX="477.0" layoutY="49.0" prefHeight="124.0" prefWidth="960.0" styleClass="title" text="Vidster's Public Library">
+               <font>
+                  <Font name="Calibri Bold" size="71.0" />
+               </font>
+            </Label>
+            <Button fx:id="yourBooksButton" alignment="CENTER" contentDisplay="TOP" layoutX="758.0" layoutY="340.0" mnemonicParsing="false" onAction="#menuAction" prefHeight="404.0" prefWidth="404.0" styleClass="buttonHome" text="Your books">
+               <font>
+                  <Font size="47.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@book-shelf.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="browseButton" alignment="CENTER" contentDisplay="TOP" layoutX="231.0" layoutY="340.0" mnemonicParsing="false" onAction="#menuAction" prefHeight="404.0" prefWidth="404.0" styleClass="buttonHome" text="Browse">
+               <font>
+                  <Font size="44.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@1200px-Magnifying_glass_icon.svg.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+<!--               <graphic>
+                  <ImageView fitHeight="133.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image />
+                     </image>
+                  </ImageView>
+               </graphic>-->
+            </Button>
+            <Button fx:id="donateButton" alignment="CENTER" contentDisplay="TOP" layoutX="1304.0" layoutY="340.0" mnemonicParsing="false" onAction="#menuAction" prefHeight="404.0" prefWidth="404.0" styleClass="buttonHome" text="Donate">
+               <font>
+                  <Font size="53.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@3107020-200.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="35.0" layoutY="30.0" mnemonicParsing="false" onAction="#save" prefHeight="84.0" prefWidth="153.0" styleClass="buttonGreen" text="Exit">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="170.0" fitWidth="518.0" layoutX="706.0" layoutY="844.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="browsePane" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="562.0" layoutY="40.0" prefHeight="124.0" prefWidth="830.0" styleClass="title" text="Book Browser" textFill="#c2c5aa">
+               <font>
+                  <Font name="System Bold" size="71.0" />
+               </font>
+            </Label>
+            <Button fx:id="homeButton" layoutX="35.0" layoutY="30.0" mnemonicParsing="false" onAction="#menuAction" prefHeight="84.0" prefWidth="153.0" styleClass="buttonGreen" text="Back">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Button>
+            <ListView fx:id="browseList" fixedCellSize="70.0" layoutX="94.0" layoutY="220.0" onMouseClicked="#selectBook" prefHeight="800.0" prefWidth="1070.0" styleClass="list" />
+            <Pane layoutX="1274.0" layoutY="220.0" prefHeight="800.0" prefWidth="552.0" styleClass="bookInspector">
+               <children>
+                  <Label fx:id="titleBr" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="14.0" prefHeight="78.0" prefWidth="517.0" styleClass="h1" text="No Book Selected" textAlignment="CENTER" textFill="#a4ac86">
+                     <font>
+                        <Font name="Calibri Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="genreBr" alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="129.0" prefHeight="32.0" prefWidth="381.0" styleClass="t1" text="genre" textAlignment="CENTER">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="authorBr" alignment="CENTER" layoutX="33.0" layoutY="84.0" prefHeight="32.0" prefWidth="486.0" styleClass="t2" text="Author" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="statusBr" alignment="CENTER" layoutX="64.0" layoutY="665.0" prefHeight="30.0" prefWidth="425.0" styleClass="t1" text="status">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ratingBr" alignment="CENTER" layoutX="232.0" layoutY="619.0" prefHeight="32.0" prefWidth="89.0" styleClass="t1" text="rating">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="rateButtonBr" disable="true" layoutX="144.0" layoutY="715.0" mnemonicParsing="false" onAction="#menuAction" opacity="0.5" prefHeight="60.0" prefWidth="106.0" styleClass="buttonBrown" text="Rate" textFill="#361c09">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="takeButton" disable="true" layoutX="304.0" layoutY="715.0" mnemonicParsing="false" onAction="#menuAction" opacity="0.5" prefHeight="60.0" prefWidth="106.0" styleClass="buttonBrown" text="Take" textFill="#361c09">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="coverBr" fitHeight="416.0" fitWidth="294.0" layoutX="129.0" layoutY="181.0" pickOnBounds="true" />
+               </children>
+            </Pane>
+            <Pane fx:id="ratePaneBr" layoutX="706.0" layoutY="401.0" prefHeight="266.0" prefWidth="510.0" style="-fx-background-color: c4c4c4;" visible="false">
+               <children>
+                  <Label layoutX="75.0" layoutY="63.0" prefHeight="45.0" prefWidth="398.0" text="What do you rate this book?">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ratingFieldBr" layoutX="113.0" layoutY="133.0" prefHeight="48.0" prefWidth="167.0" promptText="Out of 5">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
+                  <Button fx:id="ratingSubmitBr" layoutX="305.0" layoutY="133.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="48.0" prefWidth="89.0" text="Submit">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+            <Pane fx:id="takePane" layoutX="706.0" layoutY="401.0" prefHeight="266.0" prefWidth="510.0" style="-fx-background-color: c4c4c4;" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="135.0" layoutY="29.0" prefHeight="65.0" prefWidth="238.0" text="Are you sure?">
+                     <font>
+                        <Font name="Calibri" size="40.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="takeYes" layoutX="275.0" layoutY="131.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="84.0" prefWidth="127.0" text="Yes">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="takeNo" layoutX="102.0" layoutY="131.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="84.0" prefWidth="127.0" text="No">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <ImageView fitHeight="111.0" fitWidth="326.0" layoutX="1550.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="yourBooksPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="470.0" layoutY="40.0" prefHeight="124.0" prefWidth="979.0" styleClass="title" text="Your Books">
+               <font>
+                  <Font size="66.0" />
+               </font>
+            </Label>
+            <Button fx:id="homeButton" layoutX="35.0" layoutY="30.0" mnemonicParsing="false" onAction="#menuAction" prefHeight="84.0" prefWidth="153.0" styleClass="buttonGreen" text="Back">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <ListView fx:id="yourList" fixedCellSize="70.0" layoutX="94.0" layoutY="220.0" onMouseClicked="#selectBook" prefHeight="800.0" prefWidth="1070.0" styleClass="list" />
+            <Pane layoutX="1274.0" layoutY="220.0" prefHeight="800.0" prefWidth="552.0" styleClass="bookInspector">
+               <children>
+                  <Label fx:id="titleYo" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="14.0" prefHeight="78.0" prefWidth="517.0" styleClass="h1" text="No Book Selected" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="genreYo" alignment="CENTER" layoutX="86.0" layoutY="129.0" prefHeight="32.0" prefWidth="381.0" styleClass="t1" text="genre">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="authorYo" alignment="CENTER" layoutX="33.0" layoutY="84.0" prefHeight="32.0" prefWidth="486.0" styleClass="t2" text="Author">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="statusYo" alignment="CENTER" layoutX="64.0" layoutY="665.0" prefHeight="30.0" prefWidth="425.0" styleClass="t1" text="status">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ratingYo" alignment="CENTER" layoutX="232.0" layoutY="619.0" prefHeight="32.0" prefWidth="89.0" styleClass="t1" text="rating">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="rateButtonYo" layoutX="144.0" layoutY="715.0" mnemonicParsing="false" onAction="#menuAction" prefHeight="60.0" prefWidth="106.0" styleClass="buttonBrown" text="Rate">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="returnButton" layoutX="288.0" layoutY="715.0" mnemonicParsing="false" onAction="#menuAction" prefHeight="60.0" prefWidth="153.0" styleClass="buttonBrown" text="Return">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="coverYo" fitHeight="416.0" fitWidth="294.0" layoutX="129.0" layoutY="181.0" pickOnBounds="true" />
+               </children>
+            </Pane>
+            <Pane fx:id="ratePaneYo" layoutX="706.0" layoutY="401.0" prefHeight="266.0" prefWidth="510.0" style="-fx-background-color: c4c4c4;" visible="false">
+               <children>
+                  <Label layoutX="75.0" layoutY="63.0" prefHeight="45.0" prefWidth="398.0" text="What do you rate this book?">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ratingFieldYo" layoutX="113.0" layoutY="133.0" prefHeight="48.0" prefWidth="167.0" promptText="Out of 5">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
+                  <Button fx:id="ratingSubmitYo" layoutX="305.0" layoutY="133.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="48.0" prefWidth="89.0" text="Submit">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+            <Pane fx:id="returnPane" layoutX="706.0" layoutY="401.0" prefHeight="266.0" prefWidth="510.0" style="-fx-background-color: c4c4c4;" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="14.0" prefHeight="96.0" prefWidth="455.0" text="Are you sure you want to return&#10;this book?" textAlignment="CENTER">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="returnYes" layoutX="275.0" layoutY="131.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="84.0" prefWidth="127.0" text="Yes">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="returnNo" layoutX="102.0" layoutY="131.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="84.0" prefWidth="127.0" text="No">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <ImageView fitHeight="111.0" fitWidth="326.0" layoutX="1550.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="donatePane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="476.0" layoutY="40.0" prefHeight="124.0" prefWidth="967.0" styleClass="title" text="Donate a Book">
+               <font>
+                  <Font size="66.0" />
+               </font>
+            </Label>
+            <Button fx:id="homeButton" layoutX="35.0" layoutY="30.0" mnemonicParsing="false" onAction="#menuAction" prefHeight="84.0" prefWidth="153.0" styleClass="buttonGreen" text="Back">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <TextField fx:id="titleDo" layoutX="700.0" layoutY="250.0" onKeyReleased="#donateBookPreview" prefHeight="48.0" prefWidth="407.0" promptText="Title">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="authorDo" layoutX="700.0" layoutY="330.0" onKeyTyped="#donateBookPreview" prefHeight="48.0" prefWidth="407.0" promptText="Author">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="genreDo" layoutX="700.0" layoutY="410.0" onKeyTyped="#donateBookPreview" prefHeight="48.0" prefWidth="407.0" promptText="Genre">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="pagesDo" layoutX="700.0" layoutY="490.0" onKeyTyped="#donateBookPreview" prefHeight="48.0" prefWidth="407.0" promptText="Number of pages">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="ratingDo" layoutX="700.0" layoutY="570.0" onKeyTyped="#donateBookPreview" prefHeight="48.0" prefWidth="407.0" promptText="Rating">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <Button fx:id="donateBook" layoutX="829.0" layoutY="731.0" mnemonicParsing="false" onAction="#submitAction" prefHeight="78.0" prefWidth="149.0" styleClass="buttonBrown" text="Add" />
+            <Button layoutX="700.0" layoutY="648.0" mnemonicParsing="false" onAction="#filer" prefHeight="48.0" prefWidth="407.0" styleClass="buttonBrown" text="Upload Book Cover Image">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <Pane layoutX="1274.0" layoutY="220.0" prefHeight="800.0" prefWidth="552.0" styleClass="bookInspector">
+               <children>
+                  <Label fx:id="titleDoP" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="14.0" prefHeight="78.0" prefWidth="517.0" styleClass="h1" text="No Book Selected" textAlignment="CENTER" textFill="#a4ac86">
+                     <font>
+                        <Font name="Calibri Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="genreDoP" alignment="CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="129.0" prefHeight="32.0" prefWidth="381.0" styleClass="t1" text="genre" textAlignment="CENTER">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="authorDoP" alignment="CENTER" layoutX="39.0" layoutY="84.0" prefHeight="32.0" prefWidth="486.0" styleClass="t2" text="Author" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ratingDoP" alignment="CENTER" layoutX="236.0" layoutY="618.0" prefHeight="32.0" prefWidth="89.0" styleClass="t1" text="rating">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="coverDoP" fitHeight="416.0" fitWidth="294.0" layoutX="129.0" layoutY="181.0" pickOnBounds="true" />
+               </children>
+            </Pane>
+            <ImageView fitHeight="111.0" fitWidth="326.0" layoutX="1550.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="donateBookText" layoutX="567.0" layoutY="871.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="674.9655151367188">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,50 @@
+The Hunger Games
+Suze Collins
+Thriller
+18.0
+6
+374
+C:\\Users\\user\\Documents\\NetBeansProjects\\library\\src\\library\\theHungerGames.jpg
+Animal Farm
+George Orwell
+Dystopian Fiction
+14.0
+4
+246
+C:\\Users\\user\\Documents\\NetBeansProjects\\library\\src\\library\\animalFarm.jpg
+The Catcher in the Rye
+J. D. Salinger
+Fiction
+19.0
+4
+277
+C:\\Users\\user\\Documents\\NetBeansProjects\\library\\src\\library\\catcherintherye.jpg
+Smooth
+Matt Burns
+Comedy
+5.0
+1
+123
+C:\Users\user\Downloads\36572776.jpg
+Wonder
+R. J. Palacio
+Novel
+4.0
+2
+322
+C:\\Users\\user\\Documents\\NetBeansProjects\\library\\src\\library\\wonder.jpg
+.
+Diary of A Wimpy Kid
+Jeff Kinney
+Comedy
+17.0
+6
+122
+C:\\Users\\user\\Documents\\NetBeansProjects\\library\\src\\library\\diaryOfAWimpyKid.jpg
+Finding Audrey
+Sophie Kinsella
+YA fiction
+8.0
+2
+254
+C:\\Users\\user\\Documents\\NetBeansProjects\\library\\src\\library\\findingaudrey.jpg

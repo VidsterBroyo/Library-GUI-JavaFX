@@ -1,0 +1,28 @@
+- have home page with like diff buttons with icons for each option
+    - Browse (here, there will be a list w/ all the books. using context menus, you can rate or take out a book)
+    - Return (here, you cna return a book. u will also be prompted to rate it)
+    - Donate (donate.)
+
+- when they click, take u to a diff page with the stuff
+
+BROWSE
+- listview with books available
+- When book is selected, show book info on side.  when not, display "No book Selected"
+- show average rating, title, desc., 
+- buttons -- rate, take, return?
+
+RETURN
+- have text inputs
+- have list view: your books
+
+- hover button
+- fix donate book image
+- star rating
+- click sound
+
+imp.
+#can't submit new rating, but can change current rating
+#rating star visual
+#prompts a rating when book returned
+#run save when they close
+#hover
